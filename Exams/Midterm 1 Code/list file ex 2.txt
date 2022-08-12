@@ -1,0 +1,29 @@
+#include "list.h"
+#include <iostream>
+using namespace std;
+
+// Outputs each value on the given linked list to stdout, in reverse order.
+// IMPLEMENT THIS METHOD
+void List::printReverse() {
+
+    Node *ptr = m_head;
+
+    int *arr;
+    int i = 0;
+
+    while (m_head != NULL && ptr != NULL) {
+        arr[i] = ptr->m_value;
+
+        ptr = ptr->m_next;
+        i++;
+    }
+
+    for (int size = i - 1; size >= 0; size--) {
+
+        cout << arr[size] << " ";
+    }
+    cout << endl;
+
+
+
+}

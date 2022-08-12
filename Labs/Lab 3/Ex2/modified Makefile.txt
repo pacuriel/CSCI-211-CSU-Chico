@@ -1,0 +1,16 @@
+# This is the Makefile from exercise 1, which built program schedule from the source files schedule.cpp, course.cpp and course.h.  Modify this Makefile to build program foobar from the given source files foobar.cpp, foo.cpp, foo.h, bar.cpp and bar.h.
+
+foobar: foobar.o bar.o foo.o
+	g++ -Wall -pedantic -std=c++11 -o foobar foobar.o bar.o foo.o
+
+foobar.o: foobar.cpp bar.h foo.h
+	g++ -Wall -pedantic -std=c++11 -c foobar.cpp
+
+bar.o: bar.cpp bar.h
+	g++ -Wall -pedantic -std=c++11 -c bar.cpp
+
+foo.o: foo.cpp foo.h
+	g++ -Wall -pedantic -std=c++11 -c foo.cpp
+
+clean:
+	rm -f foobar foobar.o bar.o foo.o
